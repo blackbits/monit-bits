@@ -1,0 +1,4 @@
+check process sshd with pidfile /var/run/sshd.pid
+  start program "/usr/sbin/service ssh start"
+  stop program "/usr/sbin/service ssh stop"
+  if failed port <%= node[:monit][:ssh_port] %> protocol ssh 4 times within 6 cycles then restart
