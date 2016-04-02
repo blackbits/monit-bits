@@ -14,6 +14,7 @@ default[:monit][:ssh_port] = node[:ssh][:port]
 
 default[:monit][:loadavg] = [node[:cpu][:total] * 2.0 + 1,
                              node[:cpu][:total] + 1]
+default[:monit][:memory] = 75
 default[:monit][:cpu] = ["#{node[:cpu][:total] * 70}%",
                          "#{node[:cpu][:total] * 30}%",
                          "#{node[:cpu][:total] * 20}%"]

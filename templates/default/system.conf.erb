@@ -1,7 +1,7 @@
 check system <%= node[:set_fqdn] %>
 <% if value = node[:monit][:loadavg][0] %>if loadavg (1min) > <%= value %> then alert<% end %>
 <% if value = node[:monit][:loadavg][1] %>if loadavg (5min) > <%= value %> then alert<% end %>
-if memory usage > 75% then alert
+if memory usage > <%= node[:monit][:memory] %>% then alert
 <% if value = node[:monit][:cpu][0] %>if cpu usage (user) > <%= value %> then alert<% end %>
 <% if value = node[:monit][:cpu][1] %>if cpu usage (system) > <%= value %> then alert<% end %>
 <% if value = node[:monit][:cpu][2] %>if cpu usage (wait) > <%= value %> then alert<% end %>
