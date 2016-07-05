@@ -1,4 +1,4 @@
-default[:monit][:notify_email]          = 'anton@blackbits.pro'
+default[:monit][:notify_email]          = 'ops@blackbits.pro'
 
 default[:monit][:mail_format][:from]    = 'monit@blackbits.pro'
 default[:monit][:mail_format][:subject] = '[$HOST] $SERVICE $EVENT'
